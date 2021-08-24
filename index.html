@@ -13,9 +13,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="title">
+    <div class="head">
         <h1 class="neon">FizzBuzz</h1>
-        <h3 class="neon">Please, insert a number in the box right below!</h3>
+        <h3 class="neon">Insert a number in the box right below and press the button!</h3>
+        <form action="#">
+            <input type="number" placeholder="Insert a number here (10000 max)">
+            <input type="submit" value="Press here!">
+        </form>
     </div>
     <div class=""></div>
     <div class="shell-container">
@@ -25,7 +29,8 @@
             <span id="btn-maximize" class="dot green"></span>
             <div style="clear: both;"></div>
             <div id="shell-screen">
-                <span class="shell-text last">></span>
+                <span class="shell-start">></span>
+                <span id="shell-text" class="last">Prova testo</span>
             </div>
         </div>
       </div>
