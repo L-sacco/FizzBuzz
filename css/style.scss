@@ -1,3 +1,4 @@
+@import url(mobile.scss);
 
 @mixin flex-center {
 	display: flex;
@@ -48,7 +49,7 @@
 	  0 0 13px #fff,
 	  0 0 28px #f09,
 	  0 0 55px #f09,
-	  0 0 30px #f09,
+	  0 0 70px #f09,
 	}
 }
 
@@ -69,45 +70,78 @@ html {
 body {
 	width: 100%;
 	height: 80%;
+	min-height: auto;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	flex-direction: column;
 
+	.if-mobile {
+		display: none;
+	}
+
+	button {
+		font-family: 'Vibur', cursive;
+		font-size: 20px;
+		border-radius: 15px;
+		background-color: #f09;
+		color: white;
+		box-shadow: 0 0 25px #fff;
+
+		&:active {
+			transform: scale(0.9);
+		}
+	}
+
 	.head {
 		width: 100%;
 		height: 50%;
-		font-family: 'Vibur', cursive;
-		@include flex-center();
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		flex-direction: column;
 
-		h1 {
-			font-size: 100px;
-			animation: flicker 1.5s infinite alternate;
-		}
+		.neon-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			height: 50%;
+			width: 100%;
+			margin-bottom: 30px;
+
+			.neon {
+				font-family: 'Vibur', cursive;
+				color: white;
+				letter-spacing: 3px;
+			}
 	
-		h3 {
-			font-size: 25px;
-			animation: pulsate 0.1s ease-in-out infinite alternate;  
-		}
-	
-		.neon {
-			color: white;
-			letter-spacing: 3px;
-			margin-top: 30px;
-			letter-spacing: 3px;
+			h1 {
+				font-size: 100px;
+				animation: flicker 1.5s infinite alternate;
+			}
+		
+			h3 {
+				font-size: 25px;
+				animation: pulsate 0.1s ease-in-out infinite alternate; 
+				text-align: center;
+			}
 		}
 
-		form {
+		.range {
 			font-family: 'Vibur', cursive;
-			margin-top: 100px;
-			@include flex-center();
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
 			flex-direction: column;
-			
-			
+			height: auto;
+			max-height: 60%;
+			width: 550px;
+
 			input {
 				border: none;
 				outline: none;
+				margin: 10px !important;
 			}
 			input[type=number] {
 				font-family: 'Vibur', cursive;
@@ -129,27 +163,35 @@ body {
 					margin: 0;
 				}
 			}
-			input[type=submit] {
+			#labelMin, #labelMax, #confirmed {
 				font-family: 'Vibur', cursive;
-				font-size: 20px;
-				margin-top: 40px;
-				width: 100px;
-				height: 30px;
-				border-radius: 13px;
-				background-color: #f09;
 				color: white;
-				box-shadow: 0 0 15px #fff;
-				cursor: pointer;
-
-				&:active {
-					transform: scale(0.9);
-				}
+				font-size: 22px;
+				display: inline-block;
+				text-align: center;
 			}
 		}
 	}
 
+	#start, #confirmMin, #confirmMax {
+		display: block;
+		width: 6rem;
+		height: 30px;
+		margin: 20px 0;
+	}
 	.shell-container {
-		@include flex-center();
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		height: auto;
+		margin-top: 80px;
+	}
+	.shell {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		margin-top: auto;
 		width: 50%;
 		min-width: 800px;
@@ -187,6 +229,8 @@ body {
 		}
 		.green {
 			background-color: #18c132;
+
+
 		}
 	}
 
@@ -199,21 +243,19 @@ body {
 		color: white;
 		background-color: #282d35;
 		overflow: hidden;
-
-		.shell-start{
-			font-size: 1.6em;
-		}
-		#shell-text{
+		
+		.shell-text{
 			font-size: 1.4em;
 			letter-spacing: 2px;
 		}
+		.shell-text::before{
+			content: "> ";
+		}
 		  
-		.last{
-			&:after {
-				content: "|";
-				margin-left: 5px;
-				animation: blink 500ms linear infinite alternate;
-			}
+		.shelk-screen div:after{
+			content: "|";
+			margin-left: 5px;
+			animation: blink 500ms linear infinite alternate;
 		}
 	}
 }

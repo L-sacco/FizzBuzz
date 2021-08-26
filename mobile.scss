@@ -1,0 +1,15 @@
+@media only screen and (max-width: 625px) {
+	html {
+		display: flex;
+	    justify-content: center;
+	    align-items: center;
+	}
+
+	.if-mobile {
+		display: block !important;
+	}
+
+	h1 {
+		font-size: 50px;
+	}
+}

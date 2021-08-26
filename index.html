@@ -8,31 +8,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Vibur&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="scripts.js"></script>
     <title>FizzBuzz Game</title>
 </head>
 <body>
     <div class="head">
-        <h1 class="neon">FizzBuzz</h1>
-        <h3 class="neon">Insert a number in the box right below and press the button!</h3>
-        <form action="#">
-            <input type="number" placeholder="Insert a number here (10000 max)">
-            <input type="submit" value="Press here!">
-        </form>
+        <div class="neon-container">
+            <h1 class="neon">FizzBuzz</h1>
+            <h3 class="neon">Choose a range of numbers <br class="if-mobile"> (Default is 1 to 100) <br> Press "Start" whenever you're ready!
+        </div>
+        <div class="range">
+            <input id="inputMin" type="number" placeholder="Insert the min (1 to 100)">
+            <label id="labelMin" for="inputMin"></label>
+            <input id="inputMax" type="number" placeholder="Insert the max (2 to 1000)">
+            <label id="labelMax" for="inputMax"></label>
+            <button onclick="confirm()" id="confirmMin">Confirm</button>
+            <p id="confirmed"></p>
+        </div>
     </div>
-    <div class=""></div>
     <div class="shell-container">
-        <div class="toolbar">
-            <span id="btn-close" class="dot red"></span>
-            <span id="btn-minimize" class="dot yellow"></span>
-            <span id="btn-maximize" class="dot green"></span>
-            <div style="clear: both;"></div>
-            <div id="shell-screen">
-                <span class="shell-start">></span>
-                <span id="shell-text" class="last">Prova testo</span>
+        <button onclick="start()" id="start">Start!</button>
+        <div class="shell">
+            <div class="toolbar">
+                <span id="btn-close" class="dot red"></span>
+                <span id="btn-minimize" class="dot yellow"></span>
+                <span id="btn-maximize" class="dot green"></span>
+                <div style="clear: both;"></div>
+                <div id="shell-screen">
+                    <div class="shell-text">asd</div>
+                    <div class="shell-text">4543</div>
+                </div>
             </div>
         </div>
-      </div>
+    </div>
 </body>
 </html>
