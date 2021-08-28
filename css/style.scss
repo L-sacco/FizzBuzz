@@ -193,69 +193,68 @@ body {
 		justify-content: center;
 		align-items: center;
 		margin-top: auto;
-		width: 50%;
 		min-width: 800px;
-		height: 500px;
+		min-height: 500px;
 		color: white;
 		background-color: #282d35;
 		border-radius: 12px;
 		overflow: hidden;
-	}
 
-	.toolbar {
-		height: 98%;
-		width: 99%;
-		padding: 5px;
-		.dot {	
-			height: 20px;
-			width: 20px;
-			margin-right: 5px;
-			border-radius: 50%;
-			display: inline-block;
-			&:hover {
-				cursor: pointer;
-				transform: scale(1.1);
+		.toolbar {
+			height: 100%;
+			width: 99%;
+			padding: 5px;
+			.dot {	
+				height: 20px;
+				width: 20px;
+				margin-right: 5px;
+				border-radius: 50%;
+				display: inline-block;
+				&:hover {
+					cursor: pointer;
+					transform: scale(1.1);
+				}
+				&:active {
+					transform: scale(1);
+				}
 			}
-			&:active {
-				transform: scale(1);
+	
+			.red {
+				background-color: #ff5f58;
+			}
+			.yellow {
+				background-color: #ffbd2e;
+			}
+			.green {
+				background-color: #18c132;
+	
+	
 			}
 		}
-
-		.red {
-			background-color: #ff5f58;
-		}
-		.yellow {
-			background-color: #ffbd2e;
-		}
-		.green {
-			background-color: #18c132;
-
-
-		}
-	}
-
-	#shell-screen {
-		margin-top: 15px;
-		padding: 4px;
-		letter-spacing: 1px;
-		width: 100%;
-		height: 90%;
-		color: white;
-		background-color: #282d35;
-		overflow: hidden;
-		
-		.shell-text{
-			font-size: 1.4em;
-			letter-spacing: 2px;
-		}
-		.shell-text::before{
-			content: "> ";
-		}
-		  
-		.shelk-screen div:after{
-			content: "|";
-			margin-left: 5px;
-			animation: blink 500ms linear infinite alternate;
+	
+		#shell-screen {
+			margin-top: 10px;
+			padding: 5px;
+			letter-spacing: 1px;
+			width: 100%;
+			height: 100%;
+			color: white;
+			background-color: #282d35;
+			overflow: hidden;
+			
+			.shell-text{
+				font-size: 1.4em;
+				letter-spacing: 2px;
+			}
+			.shell-text::before{
+				content: "> ";
+			}
+			  
+			.shelk-screen div:after{
+				content: "|";
+				margin-left: 5px;
+				animation: blink 500ms linear infinite alternate;
+			}
 		}
 	}
 }

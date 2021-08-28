@@ -1,32 +1,31 @@
-var inputMin = 1, inputMax= 1000, error = 0;
+
+const defaultMin = 1, defaultMax = 200
+var inputMin = defaultMin, inputMax= defaultMax, error = 0
 
 function confirm() {
     let minValue = document.getElementById("inputMin").value
     let maxValue = document.getElementById("inputMax").value
 
-    inputMin = (minValue) ? minValue : 1
-    inputMax = (maxValue) ? maxValue : 1000
+    inputMin = parseInt((minValue) ? minValue : defaultMin)
+    inputMax = parseInt((maxValue) ? maxValue : defaultMax)
 
-    if (inputMin <= 0 || inputMin > 100) {
-        error = 1
+    if (inputMin < defaultMin || inputMin > (defaultMax/2)) {
         document.getElementById("labelMin").innerHTML = "Insert a number in range 1 to 100!"
-        inputMin = 1
-    }
-    else {
-        document.getElementById("labelMin").innerHTML = ""
-    }
-    if (inputMax <= 1 || inputMax > 1000) {
-        error = 1
-        document.getElementById("labelMax").innerHTML = "Insert a number in range 2 to 1000!"
-        inputMax = 1000
-    }
-    else {
-        document.getElementById("labelMax").innerHTML = ""
-    }    
+        inputMin = defaultMin
+        error = 2
+    } 
+    else document.getElementById("labelMin").innerHTML = ""
+
+    if (inputMax <= defaultMin || inputMax > defaultMax) {
+        document.getElementById("labelMax").innerHTML = "Insert a number in range 2 to 200!"
+        inputMax = defaultMax
+        error = 2
+    } 
+    else document.getElementById("labelMax").innerHTML = ""
 
     if (inputMax <= inputMin) {
-        error = 2
-        inputMax = 1000
+        error = 1
+        inputMax = defaultMax
     }
 
     if (error == 0)
@@ -34,8 +33,8 @@ function confirm() {
         document.getElementById("labelMin").innerHTML = ""
         document.getElementById("labelMax").innerHTML = ""
     } 
-    else if (error == 2) {
-        document.getElementById("labelMax").innerHTML = "Max number must be greater than Min!<br>If you start now it will be automatically set at 1000"
+    else if (error == 1) {
+        document.getElementById("labelMax").innerHTML = "Max number must be greater than Min!<br>If you start now it will be automatically set at 200"
     }
 
     document.getElementById("confirmed").innerHTML = "The range is " + inputMin + " to " + inputMax + "<br>You can now start or change the range again!"
@@ -43,19 +42,20 @@ function confirm() {
 }
 
 function start() {
-    console.log("start")
-    for (let i = inputMin; i >= inputMax; i++)
+    document.getElementById("shell-screen").innerHTML = ""
+
+    for (let i = inputMin; i <= inputMax; i++)
     {
+        console.log(i)
         if (i % 3 == 0) {
-            document.getElementById("shell-text").innerHTML = "Fizz"
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "Fizz" + "</div>"
         }
-        else if (i % 3 == 0) {
-            document.getElementById("shell-text").innerHTML = "Buzz"
+        else if (i % 5 == 0) {
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "Buzz" + "</div>"
         }
         else {
-            document.getElementById("shell-text").innerHTML = i
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + i + "</div>"
         }
     }
-    console.log("for end")
 }
 
