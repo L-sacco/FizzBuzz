@@ -41,7 +41,7 @@ function confirm() {
     error = 0;
 }
 
-function start() {
+function start(opt) {
     document.getElementById("shell-screen").innerHTML = ""
 
     for (let i = inputMin; i <= inputMax; i++)
@@ -53,9 +53,17 @@ function start() {
         else if (i % 5 == 0) {
             document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "Buzz" + "</div>"
         }
+        else if (i % 7 == 0) {
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "Foo" + "</div>"
+        }
+        else if (i % 11 == 0) {
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "Boo" + "</div>"
+        }
+        else if (i % 7 == 0 && i % 11 == 0) {
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "FooBoo" + "</div>"
+        }
         else {
             document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + i + "</div>"
         }
     }
 }
-
