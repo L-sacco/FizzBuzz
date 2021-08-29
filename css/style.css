@@ -93,6 +93,14 @@ body {
           flex-direction: column;
 }
 
+body .font-style {
+  font-family: 'Vibur', cursive;
+  color: white;
+  font-size: 22px;
+  display: inline-block;
+  text-align: center;
+}
+
 body .if-mobile {
   display: none;
 }
@@ -128,6 +136,12 @@ body .head {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+body .head .err-cont {
+  position: relative;
+  width: auto;
+  height: 30px;
 }
 
 body .head .neon-container {
@@ -213,19 +227,19 @@ body .head .range input[type=number]::-webkit-outer-spin-button, body .head .ran
   margin: 0;
 }
 
-body .head .range #labelMin, body .head .range #labelMax, body .head .range #confirmed {
-  font-family: 'Vibur', cursive;
-  color: white;
-  font-size: 22px;
-  display: inline-block;
-  text-align: center;
-}
-
-body #start, body #confirmMin, body #confirmMax {
+body #start, body #confirm, body #invert, body #rules {
   display: block;
   width: 6rem;
   height: 30px;
   margin: 20px 0;
+}
+
+body #start {
+  margin-right: 30px;
+}
+
+body #rules {
+  margin-left: auto;
 }
 
 body .shell-container {
@@ -244,10 +258,20 @@ body .shell-container {
           flex-direction: column;
   width: 100%;
   height: auto;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
-body .shell {
+body .shell-container .shell-button {
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+body .shell-container .shell {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -266,13 +290,13 @@ body .shell {
   overflow: hidden;
 }
 
-body .shell .toolbar {
+body .shell-container .shell .toolbar {
   height: 100%;
   width: 99%;
   padding: 5px;
 }
 
-body .shell .toolbar .dot {
+body .shell-container .shell .toolbar .dot {
   height: 20px;
   width: 20px;
   margin-right: 5px;
@@ -280,30 +304,30 @@ body .shell .toolbar .dot {
   display: inline-block;
 }
 
-body .shell .toolbar .dot:hover {
+body .shell-container .shell .toolbar .dot:hover {
   cursor: pointer;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-body .shell .toolbar .dot:active {
+body .shell-container .shell .toolbar .dot:active {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-body .shell .toolbar .red {
+body .shell-container .shell .toolbar .red {
   background-color: #ff5f58;
 }
 
-body .shell .toolbar .yellow {
+body .shell-container .shell .toolbar .yellow {
   background-color: #ffbd2e;
 }
 
-body .shell .toolbar .green {
+body .shell-container .shell .toolbar .green {
   background-color: #18c132;
 }
 
-body .shell #shell-screen {
+body .shell-container .shell #shell-screen {
   margin-top: 10px;
   padding: 5px;
   letter-spacing: 1px;
@@ -314,16 +338,16 @@ body .shell #shell-screen {
   overflow: hidden;
 }
 
-body .shell #shell-screen .shell-text {
+body .shell-container .shell #shell-screen .shell-text {
   font-size: 1.4em;
   letter-spacing: 2px;
 }
 
-body .shell #shell-screen .shell-text::before {
+body .shell-container .shell #shell-screen .shell-text::before {
   content: "> ";
 }
 
-body .shell #shell-screen .shelk-screen div:after {
+body .shell-container .shell #shell-screen .shelk-screen div:after {
   content: "|";
   margin-left: 5px;
   -webkit-animation: blink 500ms linear infinite alternate;

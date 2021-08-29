@@ -19,16 +19,21 @@
             <h3 class="neon">Choose a range of numbers <br class="if-mobile"> (Default is 1 to 200) <br> Press "Start" whenever you're ready!
         </div>
         <div class="range">
-            <input id="inputMin" type="number" placeholder="Insert the min (1 to 100)">
-            <label id="labelMin" for="inputMin"></label>
-            <input id="inputMax" type="number" placeholder="Insert the max (2 to 200)">
-            <label id="labelMax" for="inputMax"></label>
-            <button onclick="confirm()" id="confirmMin">Confirm</button>
-            <p id="confirmed"></p>
+            <input class="font-style" id="inputMin" type="number" placeholder="Insert the min (1 to 100)">
+            <label class="font-style err-cont" id="labelMin" for="inputMin"></label>
+            <input class="font-style" id="inputMax" type="number" placeholder="Insert the max (2 to 200)">
+            <label class="font-style err-cont" id="labelMax" for="inputMax"></label>
+            <button onclick="confirm()" id="confirm">Confirm</button>
+            <p class="font-style err-cont" id="confirmed"></p>
         </div>
     </div>
     <div class="shell-container">
-        <button onclick="start(1)" id="start">Start!</button>
+        <p class="font-style err-cont" id="inverted">Click "Invert" if you want to start with inverted Fizz & Buzz!</p>
+        <div class="shell-button">
+            <button onclick="start(1)" id="start">Start!</button>
+            <button onclick="start(2)" id="invert">Invert!</button>
+            <button onclick="showRules()" id="rules">Rules!</button>
+        </div>
         <div class="shell">
             <div class="toolbar">
                 <span id="btn-close" class="dot red"></span>

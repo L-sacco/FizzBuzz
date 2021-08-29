@@ -43,27 +43,51 @@ function confirm() {
 
 function start(opt) {
     document.getElementById("shell-screen").innerHTML = ""
+    let elseFlag = 0
+    
 
     for (let i = inputMin; i <= inputMax; i++)
     {
-        console.log(i)
         if (i % 3 == 0) {
-            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "Fizz" + "</div>"
+            document.getElementById("shell-screen").innerHTML += (opt == 1) 
+                ? "<div class='shell-text'>" + smallBig(i) + "Fizz GG" + "</div>"
+                : "<div class='shell-text'>" + smallBig(i) + "Buzz GG" + "</div>"
+            elseFlag = 1
         }
         else if (i % 5 == 0) {
-            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "Buzz" + "</div>"
+            document.getElementById("shell-screen").innerHTML += (opt == 1) 
+                ? "<div class='shell-text'>" + smallBig(i) + "Buzz GG" + "</div>"
+                : "<div class='shell-text'>" + smallBig(i) + "Fizz GG" + "</div>"
+            elseFlag = 1
         }
         else if (i % 7 == 0) {
-            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "Foo" + "</div>"
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + smallBig(i) + "Foo" + "</div>"
+            elseFlag = 1
         }
         else if (i % 11 == 0) {
-            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "Boo" + "</div>"
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + smallBig(i) + "Boo" + "</div>"
+            elseFlag = 1
         }
-        else if (i % 7 == 0 && i % 11 == 0) {
-            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + "FooBoo" + "</div>"
+
+        if (i % 3 == 0 && i % 5 == 0) {
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + smallBig(i) + "FizzBuzz FTW" + "</div>"
+            elseFlag = 1
         }
-        else {
-            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + i + "</div>"
+
+        if (i % 7 == 0 && i % 11 == 0) {
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + smallBig(i) + "FooBoo" + "</div>"
+            elseFlag = 1
         }
+
+        if (elseFlag == 0) {
+            document.getElementById("shell-screen").innerHTML += "<div class='shell-text'>" + smallBig(i) + (i + "</div>")
+        }
+        elseFlag = 0
     }
+}
+
+function smallBig(i) {
+    if (i < 16) return "(Small) "
+    else if (i > 95) return "(Big) "
+    else return ""
 }
