@@ -23,3 +23,7 @@ If it is bigger than 96 it returns (Big).
 You can invert Fizz and Buzz by pressing "Invert" button (3 returns Buzz GG, 5 returns Fizz GG)
 
 Enjoy! (Maybe)
+
+# What i used:
+
+HTML, SCSS, JS
