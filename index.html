@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Vibur&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Glory:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/mobile.css">
+    <script src="js/scripts.js" defer></script>
     <title>FizzBuzz Game</title>
 </head>
 <body>
@@ -23,16 +25,33 @@
             <label class="font-style err-cont" id="labelMin" for="inputMin"></label>
             <input class="font-style" id="inputMax" type="number" placeholder="Insert the max (2 to 200)">
             <label class="font-style err-cont" id="labelMax" for="inputMax"></label>
-            <button onclick="confirm()" id="confirm">Confirm</button>
+            <button onclick="confirm()" id="confirmBtn">Confirm</button>
             <p class="font-style err-cont" id="confirmed"></p>
         </div>
     </div>
     <div class="shell-container">
         <p class="font-style err-cont" id="inverted">Click "Invert" if you want to start with inverted Fizz & Buzz!</p>
-        <div class="shell-button">
-            <button onclick="start(1)" id="start">Start!</button>
-            <button onclick="start(2)" id="invert">Invert!</button>
-            <button onclick="showRules()" id="rules">Rules!</button>
+        <div class="shell-buttons">
+            <button onclick="start(1)" id="startBtn">Start!</button>
+            <button onclick="start(2)" id="invertBtn">Invert!</button>
+            <button onclick="showRules()" id="rulesBtn">Rules!</button>
+            <div id="rulesModal" class="modal">
+                <div class="modal-content">
+                    <button onclick="closeRules()" id="closeBtn">&times;</button>
+                    <p>Multiples of # returns: <br><br>
+                        3 = Fizz GG <br>
+                        5 = Buzz GG <br>
+                        3 AND 5 = "FizzBuzz FTW" <br><br>
+                        7 = Foo <br>
+                        11 = Boo <br>
+                        7 AND 11 = FooBoo <br><br>
+                        If the number is smaller than 16 it returns (Small) before the number; <br>
+                        If it is bigger than 96 it returns (Big). <br><br>
+                        You can invert Fizz and Buzz by pressing "Invert" button (3 returns Buzz GG; 5 returns Fizz GG) <br><br>
+                        Enjoy! (?)
+                    </p>
+                  </div>
+            </div>
         </div>
         <div class="shell">
             <div class="toolbar">
@@ -40,6 +59,7 @@
                 <span id="btn-minimize" class="dot yellow"></span>
                 <span id="btn-maximize" class="dot green"></span>
                 <div id="shell-screen">
+                    <div class="shell-text"></div>
                 </div>
             </div>
         </div>
