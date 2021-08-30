@@ -1,5 +1,5 @@
-@media only screen and (max-width: 625px) {
-	html {
+@media only screen and (max-width: 610px) {
+	html, body {
 		display: flex;
 	    justify-content: center;
 	    align-items: center;
@@ -9,7 +9,33 @@
 		display: block !important;
 	}
 
-	h1 {
-		font-size: 50px;
+	.range {
+		min-width: none !important;
+		width: 360px !important;
+	}
+
+	.shell-container,
+	.shell,
+	.shell-buttons {
+		min-width: 360px !important;
+		width: 360px !important;
+	}
+
+	.shell-container {
+		margin-top: 75px !important;
+	}
+
+	.shell-buttons {
+		justify-content: space-evenly !important;
+	}
+
+	.shell {
+		height: 400px !important;
+	}
+
+	#shell-screen {
+		&::-webkit-scrollbar {
+			width: 2vw !important;
+		}
 	}
 }

@@ -1,5 +1,5 @@
-@media only screen and (max-width: 625px) {
-  html {
+@media only screen and (max-width: 610px) {
+  html, body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -13,8 +13,29 @@
   .if-mobile {
     display: block !important;
   }
-  h1 {
-    font-size: 50px;
+  .range {
+    min-width: none !important;
+    width: 360px !important;
+  }
+  .shell-container,
+  .shell,
+  .shell-buttons {
+    min-width: 360px !important;
+    width: 360px !important;
+  }
+  .shell-container {
+    margin-top: 75px !important;
+  }
+  .shell-buttons {
+    -webkit-box-pack: space-evenly !important;
+        -ms-flex-pack: space-evenly !important;
+            justify-content: space-evenly !important;
+  }
+  .shell {
+    height: 400px !important;
+  }
+  #shell-screen::-webkit-scrollbar {
+    width: 2vw !important;
   }
 }
 /*# sourceMappingURL=mobile.css.map */
