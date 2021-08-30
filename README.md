@@ -1,6 +1,6 @@
 # FizzBuzz
 
-**Netlify: https://boring-leakey-19f147.netlify.app/ **
+Netlify: https://boring-leakey-19f147.netlify.app/
 
 Welcome to my FizzBuzz Game, a non-sense very easy game that just returns things when you press a button, you don't have to do anything else.
 
