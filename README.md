@@ -1,6 +1,6 @@
 # FizzBuzz
 
-Netlify: https://boring-leakey-19f147.netlify.app/
+**Netlify: https://boring-leakey-19f147.netlify.app/ **
 
 Welcome to my FizzBuzz Game, a non-sense very easy game that just returns things when you press a button, you don't have to do anything else.
 
@@ -23,3 +23,7 @@ If it is bigger than 96 it returns (Big).
 You can invert Fizz and Buzz by pressing "Invert" button (3 returns Buzz GG, 5 returns Fizz GG)
 
 Enjoy! (Maybe)
+
+# What i used:
+
+HTML, SCSS, JS
