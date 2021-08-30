@@ -31,7 +31,7 @@
 	}    
 }
 
-@keyframes pulsate {
+/*@keyframes pulsate {
 
 	100% {
 		text-shadow: (
@@ -52,7 +52,7 @@
 			0 0 70px #f09,
 		);
 	}
-}
+} */
 
 * {
 	margin: 0;
@@ -143,7 +143,12 @@ body {
 		
 			h3 {
 				font-size: 25px;
-				animation: pulsate 0.1s ease-in-out infinite alternate; 
+				text-shadow: (		
+					0 0 4px #fff,
+					0 0 11px #fff,
+					0 0 22px #f09,
+					0 0 44px #f09,
+				);
 				text-align: center;
 			}
 		}
