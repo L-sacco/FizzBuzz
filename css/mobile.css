@@ -10,10 +10,8 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  body {
-    margin-top: 200px;
-    min-height: none !important;
-    border: 2px solid greenyellow;
+  html {
+    height: auto;
   }
   .if-mobile {
     display: block !important;
